@@ -11,7 +11,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-        <div class="recommend" style="background-image: url(http://localhost/build/images/recommend.jpg);">
+        <div class="recommend" style="background-image: url(/build/images/recommend.jpg);">
            <span><?php $this->options->description();?></span>
         </div>
 
@@ -62,7 +62,7 @@ $this->need('header.php');
                                 <span class="index-post-avatar icon-lamp left">
                                 <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span>
                                 </span>
-								<?php else : ?>
+                                <?php else : ?>
                                 <?php endif; ?>
                                 <div class="index-post-date" itemprop="datePublished">
                                     <?php $this->date('F jS , Y'); ?>
@@ -79,21 +79,21 @@ $this->need('header.php');
 
                             <?php if (array_key_exists('thumb',unserialize($this->___fields()))): ?>
 
-							<div class="index-post-thumb">
-								<a class="index-post-cover" data-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>">
-									<img class="thumb" src="<?php echo $this->fields->thumb;?>"> 
-								</a>
-							</div>
+                            <div class="index-post-thumb">
+                                <a class="index-post-cover" data-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>">
+                                    <img class="thumb" src="<?php echo $this->fields->thumb;?>"> 
+                                </a>
+                            </div>
                             <?php else : ?>
                             <?php $thumb = showThumb($this,null,true); if(!empty($thumb)):?>
 
-							<div class="index-post-thumb">
-								<a class="index-post-cover" data-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>">
-									<img class="thumb" src="<?php echo $thumb;?>"> 
-								</a>
-							</div>
+                            <div class="index-post-thumb">
+                                <a class="index-post-cover" data-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>">
+                                    <div class="thumb" data-title="<?php $this->title() ?>" style="background-image:url(<?php echo $thumb;?>);"></div> 
+                                </a>
+                            </div>
                             <?php endif; ?>
-							<?php endif; ?>
+                            <?php endif; ?>
 
                             <div class="index-post-meta cf">
                                 <div class="index-post-button"><a href="<?php $this->permalink() ?>"> Read more </a>
